@@ -9,10 +9,18 @@ print("cheaking network")
 
 while(check_internet.check_internet()):
     input("\n...")
-    que = ls.takeCommand()
+    mode = 0
+    if(mode == 0):
+        que = ls.takeCommand()
+    else:
+        que = str(input("Enter your query: "))
+
+    if(que == "")
     print(f"\nyou said: {que}")
+
     if(que == "exit"):
         break
+
     ans = GPT.chatGPT(que)
     print("AI = ", end='')
     print(ans)
