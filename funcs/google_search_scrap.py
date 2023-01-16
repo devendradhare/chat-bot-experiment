@@ -12,10 +12,20 @@ def search(query):
 
     page = requests.get(URL, headers=headers)
     soup = BeautifulSoup(page.content, 'html.parser')
-    result = soup.find(class_="dDoNo vrBOv vk_bk").get_text()
+    # result = soup.find(class_="dDoNo vrBOv vk_bk").get_text()
+    # result = soup.find(class_="card-section").get_text()
+    result = soup.find(class_="MjjYud")
+    for string in result.stripped_strings:
+        print(repr(string))
+    # result = result.replace("Feedback","")
     # print(result)
     return result
 
+# search("ceo of google")
+# search("what is the time")
+# search("what is the speed of light")
+# search("what is the speed of sound")
+# search("what is the distance between earth and moon")
 
 # while True:
 #     try:
